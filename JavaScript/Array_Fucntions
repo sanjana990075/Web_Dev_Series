@@ -1,0 +1,82 @@
+let arr = [1, 2, 3, 4];
+console.log(arr); 
+// Output: [1, 2, 3, 4]
+
+// ---------------------- ARRAY FUNCTIONS ----------------------
+
+// push() → adds an element at the end of the array
+arr.push(10);
+console.log(arr); 
+// [1, 2, 3, 4, 10]
+
+// pop() → removes the last element
+arr.pop();
+console.log(arr); 
+// [1, 2, 3, 4]
+
+// shift() → removes the first element
+arr.shift();
+console.log(arr); 
+// [2, 3, 4]
+
+// unshift() → adds an element at the beginning
+arr.unshift(20);
+console.log(arr); 
+// [20, 2, 3, 4]
+
+// slice(start, end) → returns a portion of array (does NOT modify original)
+console.log(arr.slice(1, 2)); 
+// [2]
+
+// splice(start, deleteCount, newItem) → removes/adds elements (modifies array)
+arr.splice(1, 3, "Sanjana");
+console.log(arr); 
+// Removed [2, 3, 4], added "Sanjana"
+// [20, "Sanjana"]
+
+// pop() & push() → remove last element and add new ones
+arr.pop();           // removes "Sanjana"
+arr.push(10);
+arr.push(30);
+arr.push(40);
+console.log(arr); 
+// [20, 10, 30, 40]
+
+// map() → applies a function to each element and returns a new array
+let ans = arr.map((number) => {
+    return (number * number);
+});
+console.log(ans); 
+// [400, 100, 900, 1600]
+
+// filter() → returns elements that satisfy a condition (odd numbers here)
+let ans2 = arr.filter((value) => {
+    if (value % 2 != 0)
+        return true;
+    else
+        return false;
+});
+console.log(ans2); 
+// [] (all elements are even)
+
+// reduce() → combines all elements into a single value (sum here)
+let ans3 = arr.reduce((acc, curr) => {
+    return acc + curr;
+}, 0);
+console.log(ans3); 
+// 100
+
+// sort() → sorts array elements; (a,b)=>b-a sorts in descending order
+arr.sort((a, b) => b - a);
+console.log(arr); 
+// [40, 30, 20, 10]
+
+// indexOf() → returns index of the first occurrence of a given element
+console.log(arr.indexOf(10));
+// 3
+
+// find() → returns the first element that satisfies a condition
+let found = arr.find((value) => value === 30);
+console.log(found); 
+// 30 (returns first element equal to 30)
+// If no match found, it returns undefined
